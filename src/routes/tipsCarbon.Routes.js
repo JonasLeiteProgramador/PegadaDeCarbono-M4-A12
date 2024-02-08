@@ -19,7 +19,7 @@ tipRoutes.post('/createTip',(req,res) =>{
 tipRoutes.delete('/deleteTip/:description', (req, res) => {
   const description = req.params.description
   const deletedTip = deleteTip(description)
-  res.json({deleteTip})
+  res.json({deletedTip})
 })
 
 export { tipRoutes }
