@@ -34,5 +34,4 @@ let createAction = (action, category, volunteerActionName) => {
 }
 
 
-
 export {allActions, createAction}

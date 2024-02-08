@@ -1,6 +1,5 @@
 import { tipsCarbon } from "../models/tipsCarbon.model.js";
 
-
 let  allTipsCarbon = [
     { description: "Opte por meios de transporte mais sustentáveis, como caminhar, andar de bicicleta, usar transporte público ou veículos elétricos.", author: "Alice" },
     { description: "Adote práticas de economia de energia em casa, como usar lâmpadas LED, desligar aparelhos eletrônicos quando não estiverem em uso e escolher eletrodomésticos energeticamente eficientes.", author: "Bob" },
@@ -13,14 +12,10 @@ let  allTipsCarbon = [
     { description: "Eduque-se e conscientize os outros sobre a importância de reduzir a pegada de carbono, pois pequenas ações coletivas podem ter um grande impacto.", author: "Ivy" },
     { description: "Opte por fornecedores de energia que utilizem fontes renováveis, como solar, eólica ou hidrelétrica, para incentivar o desenvolvimento de formas mais limpas de energia.", author: "Jack" }
   ];
-  
-
 
   let getAllTips = () =>{
     return allTipsCarbon
   }
-
-
 
 
   let createTip = (description,author) =>{
@@ -28,5 +23,21 @@ let  allTipsCarbon = [
     allTipsCarbon.push(newTip)
     return newTip
   }
+  function deleteTip(message) {
+    // Encontrar o índice da dica com a mensagem específica
+    const index = allTipsCarbon.findIndex(tip => tip.description === message);
 
-  export {getAllTips,createTip }
+    // Verificar se a dica foi encontrada
+    if (index !== -1) {
+        // Remover a dica da lista
+        const deletedTip = allTipsCarbon.splice(index, 1)[0];
+
+        // Retornar a dica deletada
+        return deletedTip;
+    } else {
+        // Se a dica não for encontrada, retornar null
+        return "Deu bom não";
+    }
+}
+
+  export {getAllTips,createTip, deleteTip }
