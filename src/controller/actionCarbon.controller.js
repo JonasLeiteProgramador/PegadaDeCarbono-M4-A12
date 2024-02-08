@@ -33,6 +33,18 @@ let createAction = (action, category, volunteerActionName) => {
     return newAction
 }
 
+let updateAction = (id,volunteerActionName) =>{
+    const action = sustainableActions.findIndex(data => data.id === id)
+    if(action){  
+     const actionUpdate = sustainableActions[action].volunteerActionName = volunteerActionName 
+     return actionUpdate
+
+    }else{
+        return 'Ação não encontrada!'
+    }
 
 
-export {allActions, createAction}
+}
+
+
+export {allActions, createAction,updateAction}
